@@ -24,7 +24,7 @@ public class MaxValueInMatrix {
     }
 
     private static void findMaxValueInMatrix(double[][] matrix) {
-        double max = Double.MIN_VALUE;
+        double max = Double.NEGATIVE_INFINITY;
         int rowIndex = -1, colIndex = -1;
         int size = matrix.length;
         for (int r = 0; r < size; r++) {

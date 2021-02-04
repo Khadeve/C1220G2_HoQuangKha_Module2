@@ -40,24 +40,27 @@ public class ArraysConcatenation {
         return ar3;
     }
 
-    public static void main(String[] args) {
+    public static int[] enterAndPrintArray() {
         Scanner in = new Scanner(System.in);
-        System.out.print("Please enter number of elements of the first array: ");
-        int n1 = in.nextInt();
-        int[] ar1 = new int[n1];
-        System.out.println("Enter content of array1: ");
-        inputArray(ar1);
-        System.out.println("The array1: ");
-        printArray(ar1);
+        System.out.print("Please enter number of elements of the array: ");
+        int n = in.nextInt();
 
+        int[] arr = new int[n];
+        System.out.println("Enter content of array: ");
+        inputArray(arr);
 
-        System.out.print("\nPlease enter number of elements of the second array: ");
-        int n2 = in.nextInt();
-        int[] ar2 = new int[n2];
-        System.out.println("Enter content of array2: ");
-        inputArray(ar2);
-        System.out.println("The array2: ");
-        printArray(ar2);
+        System.out.println("The array: ");
+        printArray(arr);
+
+        return arr;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Enter the first array:");
+        int[] ar1 = enterAndPrintArray();
+
+        System.out.println("\nEnter the second array:");
+        int[] ar2 = enterAndPrintArray();
 
         int[] res = concatArrays(ar1, ar2);
         System.out.println("\nThe result: ");
