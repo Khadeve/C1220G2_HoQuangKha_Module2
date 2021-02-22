@@ -4,6 +4,7 @@ public class Fan {
     public static final int SLOW = 1;
     public static final int MEDIUM = 2;
     public static final int FAST = 3;
+    public static final String BlUE_COLOR = "blue";
 
     private int speed;
     private boolean isOn;
@@ -14,7 +15,7 @@ public class Fan {
         this.speed = SLOW;
         this.isOn = false;
         this.radius = 5;
-        this.color = "blue";
+        this.color = BlUE_COLOR;
     }
 
     public int getSpeed() {
