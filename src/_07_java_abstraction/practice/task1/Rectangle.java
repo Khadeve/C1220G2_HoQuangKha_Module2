@@ -1,6 +1,6 @@
-package _06_java_inheritance.practice.geometry;
+package _07_java_abstraction.practice.task1;
 
-public class Rectangle extends Shape {
+public class Rectangle extends Shape implements Resizable {
     private double width;
     private double height;
 
@@ -39,6 +39,12 @@ public class Rectangle extends Shape {
 
     @Override
     public String toString() {
-        return super.toString() + "[width=" + width + ",height=" + height + "]";
+        return super.toString() + "[area=" + getArea() + "]";
+    }
+
+    @Override
+    public void resize(double byPercent) {
+        width += (byPercent / 100) * width;
+        height += (byPercent / 100) * height;
     }
 }
