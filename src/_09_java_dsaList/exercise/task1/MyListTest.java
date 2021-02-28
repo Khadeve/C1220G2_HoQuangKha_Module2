@@ -11,20 +11,20 @@ public class MyListTest {
         countries.add(1, "Japan");
 
         System.out.println("Test add methods:");
-        countries.printList();
+        System.out.println(countries);
 
         /*test remove method*/
         System.out.println("-------------------------------------------------");
         System.out.println("The removed element: " + countries.remove(2));
         System.out.println("Test remove method:");
-        countries.printList();
+        System.out.println(countries);
 
         /*Test clone method*/
         System.out.println("-------------------------------------------------");
         try {
             MyList<String> cloned = countries.clone();
             System.out.println("Cloned:");
-            cloned.printList();
+            System.out.println(cloned);
         } catch(CloneNotSupportedException e) {
             e.printStackTrace();
         }
@@ -48,6 +48,6 @@ public class MyListTest {
         System.out.println("-------------------------------------------------");
         countries.clear();
         System.out.println("After-removing all elements:");
-        countries.printList();
+        System.out.println(countries);
     }
 }

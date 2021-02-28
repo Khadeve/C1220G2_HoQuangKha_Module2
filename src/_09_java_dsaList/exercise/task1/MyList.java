@@ -56,16 +56,7 @@ public class MyList<E> implements Cloneable {
     }
 
     public boolean contains(E o) {
-        if (o == null) {
-            for (Object e : elements) {
-                if (e == null) return true;
-            }
-        } else {
-            for (Object e : elements) {
-                if (e.equals(o)) return true;
-            }
-        }
-        return false;
+        return indexOf(o) != -1;
     }
 
     public int indexOf(E o) {
@@ -83,6 +74,7 @@ public class MyList<E> implements Cloneable {
 
     //append a new element e into the end of the list.
     public boolean add(E e) {
+        ensureCapacity(size + 1);
         elements[size++] = e;
         return true;
     }
@@ -90,7 +82,7 @@ public class MyList<E> implements Cloneable {
     //increase the capacity of this ArrayList to ensure it can hold the desired minimum capacity.
     public void ensureCapacity(int minCapacity) {
         if (elements.length < minCapacity) {
-            elements = Arrays.copyOf(elements, minCapacity);
+            elements = Arrays.copyOf(elements, minCapacity * 2);
         }
     }
 
@@ -103,14 +95,23 @@ public class MyList<E> implements Cloneable {
 
     public void clear() {
         size = 0;
-        elements = Arrays.copyOf(elements, size);
+        elements = new Object[DEFAULT_CAPACITY];
     }
 
-    public void printList() {
-        for (Object e : elements) {
-            if (e != null) {
-                System.out.println(e);
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("MyList[");
+
+        for (int i = 0; i < size; i++) {
+            if (i == size - 1) {
+                result.append(elements[i]);
+                break;
             }
+            result.append(elements[i]).append(",");
         }
+        result.append("]");
+
+        return result.toString();
     }
 }

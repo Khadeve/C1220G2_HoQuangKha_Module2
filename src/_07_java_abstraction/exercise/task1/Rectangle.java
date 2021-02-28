@@ -1,6 +1,8 @@
 package _07_java_abstraction.exercise.task1;
 
+
 public class Rectangle extends Shape implements Resizable {
+
     private double width;
     private double height;
 
