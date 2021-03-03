@@ -4,7 +4,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
-public class Task7 {
+public class EmployeeManagementTest {
     public static void main(String[] args) throws IOException {
         Set<Employee> staff = new TreeSet<>();
 

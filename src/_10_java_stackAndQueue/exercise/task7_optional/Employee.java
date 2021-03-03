@@ -69,4 +69,12 @@ public class Employee implements Comparable<Employee> {
     public int compareTo(@NotNull Employee o) {
         return birthday.compareTo(o.birthday);
     }
+
+    @Override
+    public String toString() {
+        return "Employee[name:" + this.name +
+                ",gender:" + this.gender +
+                ",dayOfBirth:" + this.birthday +
+                "]";
+    }
 }
