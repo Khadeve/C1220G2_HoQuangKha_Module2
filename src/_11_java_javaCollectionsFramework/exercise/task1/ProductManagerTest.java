@@ -102,7 +102,7 @@ public class ProductManagerTest {
         } while (isContinue());
     }
 
-    private static boolean isContinue() {
+    public static boolean isContinue() {
         Scanner in = new Scanner(System.in);
         System.out.print("Do you want to continue? (y/n)");
         String c = in.nextLine().toLowerCase();

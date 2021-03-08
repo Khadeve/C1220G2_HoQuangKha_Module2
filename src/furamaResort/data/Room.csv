@@ -1,0 +1,3 @@
+serviceName,id,area,price,largestNumberOfGuests,typeOfRental,freeUtilitiesRoom
+room,001-003,90.8,550.0,2,years,wifi + drink
+room,002-003,100.5,999.9,3,months,coffee

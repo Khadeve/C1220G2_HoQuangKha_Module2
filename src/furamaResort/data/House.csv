@@ -1,0 +1,4 @@
+serviceName,id,area,price,largestNumberOfGuests,typeOfRental,classificationOfRoom,utilities,numberOfFloorsHouse
+house,001-002,150.5,1200.0,3,months,vip,wifi + horse,2
+house,002-002,69.6,320.0,2,days,vip,wifi + TV,3
+house,003-002,99.0,100.1,3,days,bussiness,breakfast,4
