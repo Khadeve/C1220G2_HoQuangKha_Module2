@@ -1,0 +1,4 @@
+package _14_java_exception_and_debug.practice._2_array_index_out_of_bound_exception;
+
+public class ArrayIndexOutOfBoundsExceptionTest {
+}
