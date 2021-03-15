@@ -1,2 +1,7 @@
 serviceName,id,area,price,largestNumberOfGuests,typeOfRental,classificationOfRoom,utilities,numberOfFloorsHouse
-
+house,SVHO-0001,150.5,1200.0,3,months,vip,wifi + horse,2
+house,SVHO-0002,69.6,320.0,2,days,vip,wifi + TV,3
+house,SVHO-0003,99.0,100.1,3,days,business,breakfast,4
+housexx,SVHO-0004,100.0,900.0,3,months,business,wifi,3
+Ho,SVHO-0005,31.0,14.5,7,a,a,drink,56
+Ho,SVHO-0006,31.0,2.0,4,Days,Vip,massage,3

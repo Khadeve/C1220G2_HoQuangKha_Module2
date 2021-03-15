@@ -1,2 +1,6 @@
 serviceName,id,area,price,largestNumberOfGuests,typeOfRental,classificationOfRoom,utilities,areaOfPool,numberOfFloors
-LeBouton,001-001,200.5,5000.0,5,days,normal,bike + motorbike,90.5,3
+LeBouton,SVVL-0001,200.5,5000.0,5,days,normal,bike + motorbike,90.5,3
+villa,SVVL-0002,89.9,435.0,2,days,business,wifi + breakfast,100.0,3
+Villa03,SVVL-0003,90.0,2000.0,5,days,normal,wifi + pool,80.0,4
+villa04,SVVL-0004,10.0,560.0,20,DAYS,vip,massage,10.0,4
+Vi,SVVL-0005,35.0,100.5,15,Days,Business,massage,30.1,3

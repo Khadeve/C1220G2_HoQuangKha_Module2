@@ -2,7 +2,7 @@ package furamaResort.models;
 
 import java.io.PrintWriter;
 
-public class Room extends Services {
+public class Room extends Service {
     private String freeUtilities;
 
     public Room() {
@@ -21,11 +21,25 @@ public class Room extends Services {
         this.freeUtilities = freeUtilities;
     }
 
-    @Override
+    /*@Override
     public void writeService(PrintWriter out) {
         super.writeService(out);
         out.println(freeUtilities);
+    }*/
+
+    @Override
+    public String toString() {
+        return super.toString() + freeUtilities;
     }
+
+    /*@Override
+    public String toString() {
+        return super.toString() +
+                "\nRoom{" +
+                "\n7. freeUtilities='" + freeUtilities +
+                "\n}";
+    }*/
+
 
     @Override
     public void showInfor() {

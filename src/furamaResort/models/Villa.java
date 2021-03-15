@@ -2,7 +2,7 @@ package furamaResort.models;
 
 import java.io.PrintWriter;
 
-public class Villa extends Services {
+public class Villa extends Service {
     private String classificationOfRoom;
     private String utilities;
     private double areaOfPool;
@@ -51,11 +51,28 @@ public class Villa extends Services {
         this.numberOfFloors = numberOfFloors;
     }
 
-    @Override
+    /*@Override
     public void writeService(PrintWriter out) {
         super.writeService(out);
         out.println(classificationOfRoom + "," + utilities + "," + areaOfPool + "," + numberOfFloors);
+    }*/
+
+    @Override
+    public String toString() {
+        return super.toString() + classificationOfRoom + "," + utilities + "," + areaOfPool + "," + numberOfFloors;
     }
+
+    /*@Override
+    public String toString() {
+        return super.toString() +
+                "\nVilla{" +
+                "\n7. classificationOfRoom='" + classificationOfRoom +
+                "\n8. utilities='" + utilities +
+                "\n9. areaOfPool=" + areaOfPool +
+                "\n10. numberOfFloors=" + numberOfFloors +
+                "\n}";
+    }*/
+
 
     @Override
     public void showInfor() {
