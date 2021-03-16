@@ -1,6 +1,5 @@
 package furamaResort.commons.fileUtility;
 
-import furamaResort.commons.fileUtility.FileUtil;
 import furamaResort.models.House;
 import furamaResort.models.Room;
 import furamaResort.models.Service;
@@ -13,6 +12,11 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class ServiceFileUtil extends FileUtil {
+
+    public static final String VILLA_FILE = "Villa.csv";
+    public static final String HOUSE_FILE = "House.csv";
+    public static final String ROOM_FILE = "Room.csv";
+
 
     /**
      * Construct a service object from a string of data.
@@ -50,12 +54,12 @@ public class ServiceFileUtil extends FileUtil {
                     Integer.parseInt(largestNumberOfGuests), typeOfRental, classificationOfRoom,
                     utility, Integer.parseInt(numberOfFloors));
 
-        } else {    // In case of room.
-            String freeUtility = tokens[6];
-
-            return new Room(serviceName, id, Double.parseDouble(area), Double.parseDouble(price),
-                    Integer.parseInt(largestNumberOfGuests), typeOfRental, freeUtility);
         }
+        // In case of room.
+        String freeUtility = tokens[6];
+
+        return new Room(serviceName, id, Double.parseDouble(area), Double.parseDouble(price),
+                Integer.parseInt(largestNumberOfGuests), typeOfRental, freeUtility);
     }
 
     /**

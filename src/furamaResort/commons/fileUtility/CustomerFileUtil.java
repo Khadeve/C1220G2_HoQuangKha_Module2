@@ -10,6 +10,8 @@ import java.util.List;
 
 public class CustomerFileUtil extends FileUtil {
 
+    public static final String CUSTOMER_FILE = "Customer.csv";
+
     /**
      * Get a new customer object from a string of customer data.
      *

@@ -12,6 +12,7 @@ import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.*;
 import java.io.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class ServiceMainController {
@@ -293,10 +294,19 @@ public class ServiceMainController {
                     System.out.println("------------------------End-------------------------");
                     break;
                 case 4: // Show all names of villas without duplicate.
+                    System.out.println("---------------------Distinct Villa Names---------------------");
+                    showAllDistinctServiceNames("Villa.csv");
+                    System.out.println("---------------------------End-----------------------------");
                     break;
                 case 5: // Show all names of houses without duplicate.
+                    System.out.println("---------------------Distinct House Names---------------------");
+                    showAllDistinctServiceNames("House.csv");
+                    System.out.println("---------------------------End-----------------------------");
                     break;
                 case 6: // Show all names of rooms without duplicate.
+                    System.out.println("---------------------Distinct Room Names---------------------");
+                    showAllDistinctServiceNames("Room.csv");
+                    System.out.println("---------------------------End-----------------------------");
                     break;
                 case 7: // Back to main menu.
                     break;
@@ -325,5 +335,29 @@ public class ServiceMainController {
         } catch(IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Print out all names without duplicate of each type of service.
+     *
+     * @param fileName The file name.
+     */
+    public static void showAllDistinctServiceNames(String fileName) {
+        File serviceFile = new File(FileUtil.DATA_FOLDER + fileName);
+        TreeSet<String> distinctNames = new TreeSet<>();
+
+        try {
+            Service[] serviceList = ServiceFileUtil.readServiceData(serviceFile.toPath());
+            for (Service s : serviceList) {
+                distinctNames.add(s.getServiceName());
+            }
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+
+        // Print out the tree set.
+        AtomicInteger counter = new AtomicInteger(1);
+        distinctNames.forEach(e ->
+                System.out.println(counter.getAndIncrement() + ". " + e));
     }
 }

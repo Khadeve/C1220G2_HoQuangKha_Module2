@@ -175,7 +175,7 @@ public class CustomerMainController {
      */
     public static void showAllCustomers() {
         try {
-            File file = new File(FileUtil.DATA_FOLDER + "Customer.csv");
+            File file = new File(FileUtil.DATA_FOLDER + CustomerFileUtil.CUSTOMER_FILE);
             Customer[] customerList = CustomerFileUtil.readCustomerData(file.toPath());
 
             for (int i = 0; i < customerList.length; i++) {
@@ -194,7 +194,7 @@ public class CustomerMainController {
      */
     public static void showAllCustomers(boolean sorted) {
         try {
-            File file = new File(FileUtil.DATA_FOLDER + "Customer.csv");
+            File file = new File(FileUtil.DATA_FOLDER + CustomerFileUtil.CUSTOMER_FILE);
             Customer[] customerList = CustomerFileUtil.readCustomerData(file.toPath());
 
             /*
