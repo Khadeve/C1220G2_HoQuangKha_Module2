@@ -1,5 +1,6 @@
 package furamaResort.controllers;
 
+import furamaResort.models.Cabinet;
 import furamaResort.models.Cinema;
 
 import java.io.FileNotFoundException;
@@ -84,6 +85,8 @@ public class MainController {
                     furamaCinema.showCinemaCustomers();
                     break;
                 case 8:
+                    Cabinet furamaEmployeeCabinet = Cabinet.getEmployeeCabinet();
+                    furamaEmployeeCabinet.searchEmployeeDocument();
                     break;
                 case 9:
                     break;

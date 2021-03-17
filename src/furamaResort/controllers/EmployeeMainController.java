@@ -6,15 +6,14 @@ import furamaResort.models.Employee;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class EmployeeMainController {
 
     private static Map<String, Employee> employeeMap;
 
-    private static void setEmployeeMap(String fileName) {
-        File employeeFile = new File(FileUtil.DATA_FOLDER + fileName);
+    private static void setEmployeeMap() {
+        File employeeFile = new File(FileUtil.DATA_FOLDER + EmployeeFileUtil.EMPLOYEE_FILE);
 
         try {
             Employee[] employeeArray = EmployeeFileUtil.readEmployeeData(employeeFile.toPath());
@@ -23,8 +22,8 @@ public class EmployeeMainController {
             Map<String, Employee> temp = new TreeMap<>((o1, o2) ->
                     Integer.parseInt(o1) - Integer.parseInt(o2));
 
-            for (Employee e : employeeArray) {
-                temp.put(e.getId(), e);
+            for (Employee employee : employeeArray) {
+                temp.put(employee.getId(), employee);
             }
             employeeMap = temp;
         } catch (IOException e) {
@@ -33,11 +32,12 @@ public class EmployeeMainController {
     }
 
     public static void showAllEmployees() {
-        setEmployeeMap(EmployeeFileUtil.EMPLOYEE_FILE);
+        setEmployeeMap();
 
         employeeMap.forEach((k, v) -> {
                     System.out.println(k + ". " + v);
                 }
         );
     }
+
 }

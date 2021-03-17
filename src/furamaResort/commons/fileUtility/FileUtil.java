@@ -16,7 +16,7 @@ public class FileUtil {
      * @param object The written object.
      * @throws FileNotFoundException In case the method cannot open the file.
      */
-    public static <E> void writeObject(String fileName, E object) throws FileNotFoundException {
+    public static void writeObject(String fileName, Object object) throws FileNotFoundException {
         try (PrintWriter out = new PrintWriter(new FileOutputStream(FileUtil.DATA_FOLDER + fileName, true))) {
             out.println(object);
         }
